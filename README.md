@@ -1,0 +1,1 @@
+# yamamioceanvillage.github.io
