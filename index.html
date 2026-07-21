@@ -150,7 +150,59 @@ transition:.3s;
 transform:translateY(-4px);
 
 }
+/* ---------- スマホ対応 ---------- */
 
+@media (max-width:768px){
+
+header{
+    padding:15px 20px;
+    flex-direction:column;
+    gap:15px;
+}
+
+.logo{
+    font-size:34px;
+    text-align:center;
+}
+
+nav{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:12px;
+    width:100%;
+    text-align:center;
+}
+
+nav a{
+    font-size:15px;
+}
+
+.hero{
+    padding:140px 8% 80px;
+    height:auto;
+}
+
+.hero-text h2{
+    font-size:40px;
+}
+
+.hero-text h1{
+    font-size:44px;
+    line-height:1.2;
+}
+
+.hero-text p{
+    font-size:18px;
+}
+
+.button{
+    display:block;
+    width:220px;
+    text-align:center;
+    margin:auto;
+}
+
+}
 </style>
 
 </head>
