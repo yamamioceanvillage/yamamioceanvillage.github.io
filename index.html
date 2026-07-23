@@ -250,8 +250,6 @@ color:#0d4d73;
 font-size:30px;
 letter-spacing:2px;
 font-weight:700;
-}
-font-weight:700;
 color:white;
 }
 
@@ -294,6 +292,43 @@ transform:translateY(0);
 transform:translateY(10px);
 }
 }
+.menu-toggle{
+display:none;
+font-size:32px;
+color:white;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+display:none;
+position:absolute;
+top:75px;
+left:0;
+width:100%;
+background:white;
+padding:20px 0;
+flex-direction:column;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+nav.active{
+display:flex;
+}
+
+nav a{
+color:#0d4d73;
+padding:15px;
+font-size:18px;
+}
+
+}
 </style>
 </head>
 
@@ -301,9 +336,11 @@ transform:translateY(10px);
 <header>
 
 <div class="logo">
-YAMAMI
+YOV
 </div>
-
+<div class="menu-toggle">
+☰
+</div>
 <nav>
 
 <a href="#about">施設</a>
@@ -342,7 +379,6 @@ Instagram
 style="
 background:linear-gradient(135deg,#00c6ff,#0072ff);
 color:white;
-color:#0d4d73;
 padding:18px 48px;
 border-radius:999px;
 font-weight:700;
@@ -941,6 +977,14 @@ header.classList.add("scrolled");
 header.classList.remove("scrolled");
 
 }
+
+});
+const menu = document.querySelector(".menu-toggle");
+const nav = document.querySelector("nav");
+
+menu.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
 
 });
 </script>
