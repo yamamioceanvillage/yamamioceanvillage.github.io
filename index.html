@@ -237,7 +237,15 @@ backdrop-filter:blur(10px);
 z-index:999;
 transition:.3s;
 }
+header.scrolled{
+background:rgba(255,255,255,.96);
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
 
+header.scrolled .logo,
+header.scrolled nav a{
+color:#0d4d73;
+}
 .logo{
 font-size:22px;
 font-weight:700;
@@ -254,6 +262,20 @@ nav a{
 color:white;
 font-size:15px;
 font-weight:600;
+}
+/* ===========================
+   Scroll Animation
+=========================== */
+
+.fade-up{
+opacity:0;
+transform:translateY(50px);
+transition:all .8s ease;
+}
+
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
 }
 </style>
 </head>
@@ -370,7 +392,7 @@ d="M0,64L80,80C160,96,320,128,480,122.7C640,117,800,75,960,64C1120,53,1280,75,13
 
 <p class="sub">海で過ごす最高の一日を。</p>
 
-<div class="feature-grid">
+<div class="feature-grid fade-up">
 
 <div class="card">
 
@@ -492,7 +514,7 @@ d="M0,64L80,80C160,96,320,128,480,122.7C640,117,800,75,960,64C1120,53,1280,75,13
 
 <p class="sub">ご利用案内</p>
 
-<div class="feature-grid">
+<div class="feature-grid fade-up">
 
 <div class="card">
 
@@ -563,7 +585,7 @@ YAMAMI Ocean Village<br>
 子どもも、大人も、一日中楽しめる場所へ。
 </p>
 
-<div class="about">
+<div class="about fade-up">
 
 <div>
 
@@ -606,7 +628,7 @@ YAMAMI Ocean Village<br>
 
 </p>
 
-<div class="feature-grid">
+<div class="feature-grid fade-up">
 
 <div class="card">
 
@@ -659,7 +681,7 @@ YAMAMI Ocean Village<br>
 海を眺めながら楽しむ特別な時間。
 </p>
 
-<div class="about">
+<div class="about fade-up">
 
 <img src="https://picsum.photos/700/500?random=41">
 
@@ -793,7 +815,7 @@ Instagramを見る
 
 </p>
 
-<div class="about">
+<div class="about fade-up">
 
 <div>
 
@@ -865,6 +887,33 @@ Instagram
 </p>
 
 </footer>
+
+<script>
+
+const fades = document.querySelectorAll('.fade-up');
+
+const observer = new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+},{
+threshold:0.2
+});
+
+fades.forEach(el=>observer.observe(el));
+
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
