@@ -38,9 +38,10 @@ color:inherit;
 
 height:100vh;
 
-background-image:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-url("https://picsum.photos/1600/900");
+background:
+linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35));
+overflow:hidden;
+position:relative;
 
 background-size:cover;
 background-position:center;
@@ -304,7 +305,37 @@ cursor:pointer;
 .menu-toggle{
 display:block;
 }
+.hero-slider{
+position:absolute;
+top:0;
+left:0;
+width:300%;
+height:100%;
+display:flex;
+animation:slide 15s infinite;
+z-index:-1;
+}
 
+.hero-slider img{
+width:100%;
+object-fit:cover;
+}
+
+@keyframes slide{
+
+0%,30%{
+transform:translateX(0%);
+}
+
+35%,65%{
+transform:translateX(-33.333%);
+}
+
+70%,100%{
+transform:translateX(-66.666%);
+}
+
+}
 nav{
 display:none;
 position:absolute;
@@ -363,7 +394,11 @@ Instagram
 
 </header>
 <section class="hero">
-
+<div class="hero-slider">
+    <img src="https://picsum.photos/1600/900?random=1">
+    <img src="https://picsum.photos/1600/900?random=2">
+    <img src="https://picsum.photos/1600/900?random=3">
+</div>
 <div>
 
 <h1>YAMAMI Ocean Village</h1>
